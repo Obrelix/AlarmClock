@@ -1,0 +1,48 @@
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Timer.exe.config
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Timer.exe.manifest
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Timer.application
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Timer.exe
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Timer.pdb
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\Interop.AXVLC.dll
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\bin\Debug\AxInterop.AXVLC.dll
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Interop.AXVLC.dll
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\AxInterop.AXVLC.dll
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.csproj.ResolveComReference.cache
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_About.resources
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_AddAlarm.resources
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_AlarmVideoPlayer.resources
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_Main.resources
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.Properties.Resources.resources
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.exe.manifest
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.application
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.exe
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.pdb
+C:\Users\Tataki\documents\visual studio 2015\Projects\Timer\Timer\obj\Debug\Timer.csprojResolveAssemblyReference.cache
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\Timer.exe.config
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\Timer.exe
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\Timer.pdb
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\Interop.AXVLC.dll
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\bin\Debug\AxInterop.AXVLC.dll
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Interop.AXVLC.dll
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\AxInterop.AXVLC.dll
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.csproj.ResolveComReference.cache
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_About.resources
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_AddAlarm.resources
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_AlarmVideoPlayer.resources
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.frm_Main.resources
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.Properties.Resources.resources
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.exe
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.pdb
+C:\Users\Obrelix\Documents\Visual Studio 2015\Projects\Timer\Timer\obj\Debug\Timer.csprojResolveAssemblyReference.cache
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\bin\Debug\Timer.exe.config
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Interop.AXVLC.dll
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\AxInterop.AXVLC.dll
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.csproj.ResolveComReference.cache
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.exe
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.pdb
