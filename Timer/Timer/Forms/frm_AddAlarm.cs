@@ -47,9 +47,11 @@ namespace Timer
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].Date =  new DateTime(dtpicker.Year, dtpicker.Month, dtpicker.Day, (int)nmr_Hours.Value, (int)nmr_Minutes.Value, (int)nmr_Seconds.Value);
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].Mode = cbx_Mode.SelectedIndex;
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].ModeValue = (int)nmr_Repeat.Value;
+                    frm_Main.AlarmObj[frm_Main.EditIndex_G].VideoPath = AmediaPath.FileName;
                     frm_Main.btnEditFlag_G = true;
                     frm_Main.EditAlarm_G = false;
                     frm_Main.AddformClose_G = true;
+
 
                 }
                 else
@@ -129,6 +131,24 @@ namespace Timer
                 nmr_Minutes.Value = DateTime.Now.Minute;
                 nmr_Hours.Value = DateTime.Now.Hour;
                 dt_Picker.Value = DateTime.Now;
+            }
+        }
+
+        private void nmr_Hours_ValueChanged(object sender, EventArgs e)
+        {
+            if (nmr_Hours.Value >= nmr_Hours.Maximum)
+            {
+                nmr_Hours.Value = nmr_Hours.Minimum;
+            }
+            if (nmr_Minutes.Value >= nmr_Minutes.Maximum)
+            {
+                nmr_Minutes.Value = nmr_Minutes.Minimum;
+                nmr_Hours.Value++;
+            }
+            if(nmr_Seconds.Value >= nmr_Seconds.Maximum)
+            {
+                nmr_Seconds.Value = nmr_Seconds.Minimum;
+                nmr_Minutes.Value++;
             }
         }
     }

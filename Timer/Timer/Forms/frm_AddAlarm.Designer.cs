@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AddAlarm));
             this.pnl_NewAlarm = new System.Windows.Forms.Panel();
+            this.nmr_Repeat = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbx_Mode = new System.Windows.Forms.ComboBox();
@@ -45,14 +46,13 @@
             this.txtb_Info = new System.Windows.Forms.TextBox();
             this.nmr_Hours = new System.Windows.Forms.NumericUpDown();
             this.dt_Picker = new System.Windows.Forms.DateTimePicker();
-            this.nmr_Repeat = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_NewAlarm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmr_Repeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Seconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Minutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Hours)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmr_Repeat)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,13 @@
             this.pnl_NewAlarm.Name = "pnl_NewAlarm";
             this.pnl_NewAlarm.Size = new System.Drawing.Size(254, 63);
             this.pnl_NewAlarm.TabIndex = 5;
+            // 
+            // nmr_Repeat
+            // 
+            this.nmr_Repeat.Location = new System.Drawing.Point(101, 5);
+            this.nmr_Repeat.Name = "nmr_Repeat";
+            this.nmr_Repeat.Size = new System.Drawing.Size(45, 20);
+            this.nmr_Repeat.TabIndex = 10;
             // 
             // label7
             // 
@@ -170,16 +177,28 @@
             // nmr_Seconds
             // 
             this.nmr_Seconds.Location = new System.Drawing.Point(203, 15);
+            this.nmr_Seconds.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.nmr_Seconds.Name = "nmr_Seconds";
             this.nmr_Seconds.Size = new System.Drawing.Size(45, 20);
             this.nmr_Seconds.TabIndex = 3;
+            this.nmr_Seconds.ValueChanged += new System.EventHandler(this.nmr_Hours_ValueChanged);
             // 
             // nmr_Minutes
             // 
             this.nmr_Minutes.Location = new System.Drawing.Point(152, 16);
+            this.nmr_Minutes.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.nmr_Minutes.Name = "nmr_Minutes";
             this.nmr_Minutes.Size = new System.Drawing.Size(45, 20);
             this.nmr_Minutes.TabIndex = 2;
+            this.nmr_Minutes.ValueChanged += new System.EventHandler(this.nmr_Hours_ValueChanged);
             // 
             // txtb_Info
             // 
@@ -191,9 +210,15 @@
             // nmr_Hours
             // 
             this.nmr_Hours.Location = new System.Drawing.Point(101, 16);
+            this.nmr_Hours.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             this.nmr_Hours.Name = "nmr_Hours";
             this.nmr_Hours.Size = new System.Drawing.Size(45, 20);
             this.nmr_Hours.TabIndex = 1;
+            this.nmr_Hours.ValueChanged += new System.EventHandler(this.nmr_Hours_ValueChanged);
             // 
             // dt_Picker
             // 
@@ -203,13 +228,6 @@
             this.dt_Picker.Name = "dt_Picker";
             this.dt_Picker.Size = new System.Drawing.Size(89, 20);
             this.dt_Picker.TabIndex = 0;
-            // 
-            // nmr_Repeat
-            // 
-            this.nmr_Repeat.Location = new System.Drawing.Point(101, 5);
-            this.nmr_Repeat.Name = "nmr_Repeat";
-            this.nmr_Repeat.Size = new System.Drawing.Size(45, 20);
-            this.nmr_Repeat.TabIndex = 10;
             // 
             // panel1
             // 
@@ -256,10 +274,10 @@
             this.Load += new System.EventHandler(this.frm_AddAlarm_Load);
             this.pnl_NewAlarm.ResumeLayout(false);
             this.pnl_NewAlarm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmr_Repeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Seconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Minutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Hours)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmr_Repeat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

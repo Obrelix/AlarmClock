@@ -16,3 +16,4 @@ C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer
 C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
 C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.exe
 C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.pdb
+C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.csprojResolveAssemblyReference.cache
