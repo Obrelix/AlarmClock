@@ -30,9 +30,10 @@ namespace Timer
         
         //Μετρητης για την παρακολούθηση του πλήθους των ξυπνητηριών
         int alarmsCount;
-        
-        
 
+        int analogClockMod = 2;
+        bool showAnalog = false;
+        bool analogFirstTime = false;
         //Global Variables
 
         //Μεταβλητή που ελέγχει αν έχει κλείσει η φόρμα AddAlarm
@@ -86,8 +87,10 @@ namespace Timer
         //Event Που ενεργοποιείται κατα το άνοιγμα της φόρμας
         private void frmMain_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.TransparencyKey = Color.LimeGreen;
             //Αρχικοποίηση του Timer
-            tmr_Clock.Interval = 100;
+            tmr_Clock.Interval = 50;
             tmr_Clock.Enabled = true;
             tmr_Clock.Start();
             lbl_CurrentTime.BackColor = Color.FromArgb(0, 0, 0);
@@ -128,11 +131,15 @@ namespace Timer
             if (frm_AlarmVideoPlayer.frm_AlarmVideoPLayer_Open)
             {
                 ClockMove();
-                lbl_CurrentTime.BackColor = ClockTools.ColorMode(5);
+                lbl_CurrentTime.BackColor = ClockTools.ColorMode(3);
+                this.BackColor = ClockTools.ColorMode(5);
             }
             else
             {
+
+                lbl_CurrentTime.Location = new Point((int)((this.ClientRectangle.Width - lbl_CurrentTime.Width) / 2), 50);
                 lbl_CurrentTime.BackColor = Color.Black;
+                this.BackColor = SystemColors.ActiveCaption;
             }
         }
       
@@ -182,20 +189,20 @@ namespace Timer
         {
             if (DateTime.Now.Millisecond <= 250 )
             {
-                lbl_CurrentTime.Location = new Point((map(0, 250, 90, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 90), DateTime.Now.Millisecond)), 24);
+                lbl_CurrentTime.Location = new Point((map(0, 250, 60, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 60), DateTime.Now.Millisecond)), 50);
             }
             else if(DateTime.Now.Millisecond > 250 && DateTime.Now.Millisecond <= 500)
             {
-                lbl_CurrentTime.Location = new Point((map(500, 250, 90, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 90), DateTime.Now.Millisecond)), 24);
+                lbl_CurrentTime.Location = new Point((map(251, 500, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 60), 60, DateTime.Now.Millisecond)), 50);
 
             }
             else if (DateTime.Now.Millisecond > 500 && DateTime.Now.Millisecond <= 750)
             {
-                lbl_CurrentTime.Location = new Point((map(500, 750, 90, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 90), DateTime.Now.Millisecond)), 24);
+                lbl_CurrentTime.Location = new Point((map(501, 750, 60, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 60), DateTime.Now.Millisecond)), 50);
             }
             else
             {
-                lbl_CurrentTime.Location = new Point((map(750, 1000, 90, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 90), DateTime.Now.Millisecond)), 24);
+                lbl_CurrentTime.Location = new Point((map(751, 999, (this.ClientRectangle.Width - lbl_CurrentTime.Width - 60), 60, DateTime.Now.Millisecond)), 50);
 
             }
         }
@@ -205,12 +212,29 @@ namespace Timer
 
         private void tmr_Clock_Tick(object sender, EventArgs e)
         {
-            lbl_Seconds.Text = DateTime.Now.Second.ToString();
-            
-                //Ανανέωνε το Label με την τρέχουσα Ώρα
-                lbl_CurrentTime.Text = DateTime.Now.ToShortDateString() + "\n" + DateTime.Now.ToLongTimeString();
-                lbl_CurrentTime.Location = new Point((int)((this.ClientRectangle.Width - lbl_CurrentTime.Width)/2), 24);
-               
+
+            if (showAnalog)
+            {
+                lbl_CurrentTime.Visible = false;
+                pnl_AnalogClock.Visible = true;
+            }
+            else
+            {
+                
+
+                lbl_CurrentTime.Visible = true;
+                pnl_AnalogClock.Visible = false;
+                
+            }
+
+            //Ανανέωνε το Label με την τρέχουσα Ώρα
+            lbl_CurrentTime.Text = DateTime.Now.ToShortDateString() + "\n" + DateTime.Now.ToLongTimeString();
+            ClockTools.ClockStart(pnl_AnalogClock, Color.Black, Color.White, 12,
+                 Color.Red, 4,
+                 Color.Blue, 9,
+                 Color.DarkBlue, 14,
+                 250, analogClockMod, analogFirstTime);
+            analogFirstTime = false;
             CheckForAlarm();
             CheckForNewAlarm();
 
@@ -439,6 +463,20 @@ namespace Timer
             {
                 mnu_EnableAlarms.Checked = !mnu_EnableAlarms.Checked;
             }
+            if(e.KeyData == (Keys.Control | Keys.A))
+            {
+                AddBtn_G = true;
+                EditAlarm_G = false;
+                if (chkb_AddAlarm.Checked)
+                {
+                    chkb_AddAlarm.Checked = !chkb_AddAlarm.Checked;
+                    chkb_AddAlarm.Checked = !chkb_AddAlarm.Checked;
+                }
+                else
+                {
+                    chkb_AddAlarm.Checked = true;
+                }
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -489,7 +527,7 @@ namespace Timer
 
         private void mnu_AnalogClock_Click(object sender, EventArgs e)
         {
-            ClockTools.ClockStart();
+            mnu_AnalogClock.Checked = !mnu_AnalogClock.Checked;
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -499,27 +537,105 @@ namespace Timer
 
         private void mnu_Mode1_Click(object sender, EventArgs e)
         {
-            ClockTools.ClockStart(1);
+            if (mnu_AnalogClock.Checked)
+            {
+                ClockTools.ClockStart(1);
+            }
+            analogClockMod = 1;
         }
 
         private void mnu_Mode2_Click(object sender, EventArgs e)
         {
-            ClockTools.ClockStart(2);
+            if (mnu_AnalogClock.Checked)
+            {
+                ClockTools.ClockStart(2);
+            }
+            analogClockMod = 2;
         }
 
         private void mnu_Mode3_Click(object sender, EventArgs e)
         {
-            ClockTools.ClockStart(3);
+            if (mnu_AnalogClock.Checked)
+            {
+                ClockTools.ClockStart(3);
+            }
+            analogClockMod = 3;
         }
 
         private void mnu_Mode4_Click(object sender, EventArgs e)
         {
-            ClockTools.ClockStart(4);
+            if (mnu_AnalogClock.Checked)
+            {
+                ClockTools.ClockStart(4);
+            }
+            analogClockMod = 4;
         }
 
         private void frm_Main_Paint(object sender, PaintEventArgs e)
         {
+            pnl_AnalogClock.Location = new Point((int)((this.ClientRectangle.Width - pnl_AnalogClock.Width) / 2), 24);
+            ClockTools.ClockStart(pnl_AnalogClock, Color.Black, Color.White, 12,
+            Color.Red, 4,
+            Color.Blue, 9,
+            Color.DarkBlue, 14,
+            250, analogClockMod, analogFirstTime);
+        }
 
+        private void btn_AnalogClock_Click(object sender, EventArgs e)
+        {
+
+            analogFirstTime = true;
+            showAnalog = !showAnalog;
+        }
+
+        private void cntxAC_md1_Click(object sender, EventArgs e)
+        {
+            cntxAC_md1.Checked = true;
+            cntxAC_md2.Checked = false;
+            cntxAC_md3.Checked = false;
+            cntxAC_md4.Checked = false;
+            cntxAC_md5.Checked = false;
+            analogClockMod = 1;
+        }
+
+        private void cntxAC_md2_Click(object sender, EventArgs e)
+        {
+            cntxAC_md1.Checked = false;
+            cntxAC_md2.Checked = true;
+            cntxAC_md3.Checked = false;
+            cntxAC_md4.Checked = false;
+            cntxAC_md5.Checked = false;
+            analogClockMod = 2;
+        }
+
+        private void cntxAC_md3_Click(object sender, EventArgs e)
+        {
+            cntxAC_md1.Checked = false;
+            cntxAC_md2.Checked = false;
+            cntxAC_md3.Checked = true;
+            cntxAC_md4.Checked = false;
+            cntxAC_md5.Checked = false;
+            analogClockMod = 3;
+        }
+
+        private void cntxAC_md4_Click(object sender, EventArgs e)
+        {
+            cntxAC_md1.Checked = false;
+            cntxAC_md2.Checked = false;
+            cntxAC_md3.Checked = false;
+            cntxAC_md4.Checked = true;
+            cntxAC_md5.Checked = false;
+            analogClockMod = 4;
+        }
+
+        private void cntxAC_md5_Click(object sender, EventArgs e)
+        {
+            cntxAC_md1.Checked = false;
+            cntxAC_md2.Checked = false;
+            cntxAC_md3.Checked = false;
+            cntxAC_md4.Checked = false;
+            cntxAC_md5.Checked = true;
+            analogClockMod = 5;
         }
     }
 }

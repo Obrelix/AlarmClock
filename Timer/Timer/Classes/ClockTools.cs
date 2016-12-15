@@ -13,7 +13,7 @@ namespace Timer
 
         private static Form frm_Clock = new Form();
         private static bool _firstTime = true;
-        private static int _mode = 5;
+        private static int _mode = 2;
         private static Graphics g;
         public static double map(
            double originalStart, double originalEnd, // original range
@@ -36,6 +36,19 @@ namespace Timer
             return p;
         }
 
+        public static Point AnglePoint(double angle, double distanceFromCenter, double angleIncrement,
+            Control control, int controlWidth, int controlHeight)
+        {
+            angle += angleIncrement;
+            angle *= Math.PI / 180;
+            Point p = new Point()
+            {
+                X = (int)(control.ClientRectangle.Width / 2 + Math.Cos(angle) * distanceFromCenter - controlWidth / 2),
+                Y = (int)(control.ClientRectangle.Height / 2 - Math.Sin(angle) * distanceFromCenter - controlHeight / 2)
+            };
+            return p;
+        }
+
         public static Point CenterPoint(Form frm)
         {
             Point p = new Point()
@@ -52,6 +65,26 @@ namespace Timer
             {
                 X = (frm.ClientRectangle.Width - controlWidth) / 2,
                 Y = (frm.ClientRectangle.Height - controlHeight) / 2
+            };
+            return p;
+        }
+        public static Point CenterPoint(Control control)
+        {
+            Point p = new Point()
+            {
+
+                X = (control.ClientRectangle.Width ) / 2,
+                Y = (control.ClientRectangle.Height) / 2
+            };
+            return p;
+        }
+        public static Point CenterPoint(Control control, int itemWidth, int itemHeight )
+        {
+            Point p = new Point()
+            {
+
+                X = (control.ClientRectangle.Width - itemWidth) / 2,
+                Y = (control.ClientRectangle.Height - itemHeight) / 2
             };
             return p;
         }
@@ -146,7 +179,7 @@ namespace Timer
             //    + (DateTime.Now.Minute * 3600000)+ (DateTime.Now.Hour * 216000000));
             try
             {
-                frm.BackColor = SystemColors.ActiveCaption;
+                frm.BackColor = Color.LimeGreen;
                 g= frm.CreateGraphics();
 
                 g.DrawLine(pHour, CenterPoint(frm), AnglePoint(angleHour, (circleDiameter / 4), 90, frm, 0, 0));
@@ -177,7 +210,7 @@ namespace Timer
             }
             catch (Exception exp)
             {
-               // MessageBox.Show(exp.Message);
+                MessageBox.Show(exp.Message);
             }
 
         }
@@ -199,7 +232,7 @@ namespace Timer
             _mode = mode;
             frm_Clock.FormClosing += new FormClosingEventHandler(frm_Clock_Closing);
             frm_Clock.Paint += new PaintEventHandler(frm_Clock_Paint);
-
+            frm_Clock.TransparencyKey = Color.LimeGreen;
             frm_Clock.Height = 300;
             frm_Clock.Width = 300;
             frm_Clock.MaximumSize = new Size(300, 300);
@@ -211,11 +244,7 @@ namespace Timer
             tmr_Clock.Tick += new EventHandler(tmr_Clock_Tick);
             tmr_Clock.Start();
 
-            System.Windows.Forms.Timer tmr_Pause = new System.Windows.Forms.Timer();
-            tmr_Pause.Interval = 20;
-            tmr_Pause.Enabled = true;
-            tmr_Pause.Tick += new EventHandler(tmr_Pause_Tick);
-            tmr_Pause.Start();
+            
 
             frm_Clock.Show();
             _firstTime = true;
@@ -229,10 +258,7 @@ namespace Timer
         private static void tmr_Clock_Tick(object sender, EventArgs e)
         {
             ClockStart(frm_Clock , _mode);
-        }
-        private static void tmr_Pause_Tick(object sender, EventArgs e)
-        {
-            if (DateTime.Now.Second == 0 && DateTime.Now.Millisecond < 30)
+            if (DateTime.Now.Second == 0 && DateTime.Now.Millisecond < 60)
             {
                 frm_Clock.Invalidate();
             }
@@ -254,6 +280,65 @@ namespace Timer
            
         }
 
+        public static void ClockStart(Control control, Color colorFrame,
+           Color colorClock, int clockThickness,
+           Color colorSec, int SecThickness,
+           Color colorMin, int MinThickness,
+           Color colorHour, int HourThickness,
+           int clockDiameter, int mode, bool firstTime)
+        {
+            Random rndColor = new Random(255);
+            Pen pSec = new Pen(ColorMode(mode, colorSec), SecThickness);
+            Pen pFrame = new Pen(colorFrame, 10);
+            Pen pMin = new Pen(colorMin, MinThickness);
+            Pen pHour = new Pen(colorHour, HourThickness);
+            Pen pCan = new Pen(colorClock, clockThickness);
+            double angleSec, angleMin, angleHour;
+            int circleDiameter = clockDiameter;
+            angleSec = map(0, 60000, 360, 0, DateTime.Now.Millisecond + (DateTime.Now.Second) * 1000);
+            angleMin = map(0, 60, 360, 0, DateTime.Now.Minute);
+            angleHour = map(0, 12, 360, 0, DateTime.Now.Hour);
+            //oxi megali diafora me milliseconds
+            //angleMin = map(0, 216000000, 360, 0, DateTime.Now.Millisecond + (DateTime.Now.Second) * 1000
+            //    + (DateTime.Now.Minute * 3600000));
+            //angleHour = map(0, 2592000000, 360, 0, DateTime.Now.Millisecond + (DateTime.Now.Second) * 1000
+            //    + (DateTime.Now.Minute * 3600000)+ (DateTime.Now.Hour * 216000000));
+            try
+            {
+                control.BackColor = System.Drawing.Color.Transparent;
+                g = control.CreateGraphics();
 
+                g.DrawLine(pHour, CenterPoint(control), AnglePoint(angleHour, (circleDiameter / 4), 90, control, 0, 0));
+                g.DrawLine(pSec, CenterPoint(control), AnglePoint(angleSec, circleDiameter / 2, 90, control, 0, 0));
+                g.DrawLine(pMin, CenterPoint(control), AnglePoint(angleMin, (circleDiameter / 2) - 10, 90, control, 0, 0));
+                if (DateTime.Now.Second == 0 && DateTime.Now.Millisecond < 100 || firstTime)
+                {
+                    g.FillEllipse(pFrame.Brush, CenterPoint(control, circleDiameter, circleDiameter).X,
+                        CenterPoint(control, circleDiameter, circleDiameter).Y,
+                        circleDiameter, circleDiameter);
+                    _firstTime = false;
+                }
+                g.FillEllipse(pCan.Brush, CenterPoint(control, circleDiameter / 12, circleDiameter / 12).X,
+                   CenterPoint(control, circleDiameter / 12, circleDiameter / 12).Y,
+                   circleDiameter / 12, circleDiameter / 12);
+                g.FillEllipse(pCan.Brush, AnglePoint(90, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).X,
+                    AnglePoint(90, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).Y,
+                    circleDiameter / 15, circleDiameter / 15);
+                g.FillEllipse(pCan.Brush, AnglePoint(180, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).X,
+                    AnglePoint(180, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).Y,
+                    circleDiameter / 15, circleDiameter / 15);
+                g.FillEllipse(pCan.Brush, AnglePoint(270, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).X,
+                    AnglePoint(270, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).Y,
+                    circleDiameter / 15, circleDiameter / 15);
+                g.FillEllipse(pCan.Brush, AnglePoint(0, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).X,
+                    AnglePoint(0, (circleDiameter - 40) / 2, 0, control, circleDiameter / 15, circleDiameter / 15).Y,
+                    circleDiameter / 15, circleDiameter / 15);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+
+        }
     }
 }

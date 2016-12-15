@@ -59,6 +59,7 @@
             // 
             // pnl_NewAlarm
             // 
+            this.pnl_NewAlarm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnl_NewAlarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_NewAlarm.Controls.Add(this.nmr_Repeat);
             this.pnl_NewAlarm.Controls.Add(this.label7);
@@ -66,7 +67,7 @@
             this.pnl_NewAlarm.Controls.Add(this.cbx_Mode);
             this.pnl_NewAlarm.Controls.Add(this.btn_SelectVideo);
             this.pnl_NewAlarm.Controls.Add(this.btn_AddAlarm);
-            this.pnl_NewAlarm.Location = new System.Drawing.Point(12, 114);
+            this.pnl_NewAlarm.Location = new System.Drawing.Point(12, 112);
             this.pnl_NewAlarm.Name = "pnl_NewAlarm";
             this.pnl_NewAlarm.Size = new System.Drawing.Size(254, 63);
             this.pnl_NewAlarm.TabIndex = 5;
@@ -81,7 +82,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 32);
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label7.Location = new System.Drawing.Point(8, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 13);
             this.label7.TabIndex = 14;
@@ -90,6 +94,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label6.Location = new System.Drawing.Point(8, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
@@ -132,6 +139,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
@@ -141,6 +151,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label4.Location = new System.Drawing.Point(200, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
@@ -150,6 +163,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label3.Location = new System.Drawing.Point(150, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
@@ -159,6 +175,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(98, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
@@ -168,6 +187,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
@@ -231,16 +253,18 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtb_Info);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(254, 45);
             this.panel1.TabIndex = 10;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dt_Picker);
             this.panel2.Controls.Add(this.label1);
@@ -250,7 +274,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.nmr_Hours);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(12, 63);
+            this.panel2.Location = new System.Drawing.Point(12, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(254, 45);
             this.panel2.TabIndex = 11;
@@ -260,18 +284,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(281, 197);
+            this.ClientSize = new System.Drawing.Size(284, 186);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_NewAlarm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(300, 225);
+            this.MinimumSize = new System.Drawing.Size(300, 225);
             this.Name = "frm_AddAlarm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Alarm";
             this.Activated += new System.EventHandler(this.frm_AddAlarm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_AddAlarm_FormClosing);
             this.Load += new System.EventHandler(this.frm_AddAlarm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_AddAlarm_KeyDown);
             this.pnl_NewAlarm.ResumeLayout(false);
             this.pnl_NewAlarm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmr_Repeat)).EndInit();

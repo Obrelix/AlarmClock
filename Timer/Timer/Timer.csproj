@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Alarms.cs" />
-    <Compile Include="Classes\Analog Clock.cs" />
+    <Compile Include="Classes\ClockTools.cs" />
     <Compile Include="Forms\frm_About.cs">
       <SubType>Form</SubType>
     </Compile>

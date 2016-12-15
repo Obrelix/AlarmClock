@@ -26,13 +26,17 @@ namespace Timer
             cbx_Mode.DataSource = frm_Main.CbxObj;
             cbx_Mode.DisplayMember = "Descr";
             cbx_Mode.ValueMember = "Mode";
-            cbx_Mode.SelectedIndex = 0;
+            cbx_Mode.SelectedIndex = 3;
 
         }
 
         
 
         private void btn_AddAlarm_Click(object sender, EventArgs e)
+        {
+            SaveForm();
+        }
+        private void SaveForm()
         {
             try
             {
@@ -44,7 +48,7 @@ namespace Timer
                 if (frm_Main.EditAlarm_G)
                 {
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].Info = txtb_Info.Text;
-                    frm_Main.AlarmObj[frm_Main.EditIndex_G].Date =  new DateTime(dtpicker.Year, dtpicker.Month, dtpicker.Day, (int)nmr_Hours.Value, (int)nmr_Minutes.Value, (int)nmr_Seconds.Value);
+                    frm_Main.AlarmObj[frm_Main.EditIndex_G].Date = new DateTime(dtpicker.Year, dtpicker.Month, dtpicker.Day, (int)nmr_Hours.Value, (int)nmr_Minutes.Value, (int)nmr_Seconds.Value);
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].Mode = cbx_Mode.SelectedIndex;
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].ModeValue = (int)nmr_Repeat.Value;
                     frm_Main.AlarmObj[frm_Main.EditIndex_G].VideoPath = AmediaPath.FileName;
@@ -56,7 +60,7 @@ namespace Timer
                 }
                 else
                 {
-                    
+
                     frm_Main.AlarmObj.Add(new Alarms(txtb_Info.Text,
                     (new DateTime(dtpicker.Year, dtpicker.Month, dtpicker.Day, (int)nmr_Hours.Value, (int)nmr_Minutes.Value, (int)nmr_Seconds.Value)),
                     AmediaPath.FileName, frm_Main.CbxObj[cbx_Mode.SelectedIndex].Mode,
@@ -66,18 +70,17 @@ namespace Timer
                     frm_Main.btnAddFlag_G = true;
                     frm_Main.AddformClose_G = true;
                 }
-                    
-                
+
+
                 //διαφορετικά όρισε για Path to αρχικό ξυπνητήρι
-               
-                
+
+
             }
             catch (Exception exception)
             {
                 MessageBox.Show("Error " + exception.Message);
             }
         }
-
         //Event που ενεργοποιείται κατα το πάτημα του κουμπιού Select Video
         private void btn_SelectVideo_Click(object sender, EventArgs e)
         {
@@ -90,9 +93,10 @@ namespace Timer
 
         private void frm_AddAlarm_Load(object sender, EventArgs e)
         {
-            
-            //Πέρασε τα Numeric τισ τιμές της τρέχοντος ώρας
-            
+            this.KeyPreview = true;
+            ////Πέρασε τα Numeric τισ τιμές της τρέχοντος ώρας
+            //this.BackColor = SystemColors.ActiveCaption;
+            //this.TransparencyKey = SystemColors.ActiveCaption;
         }
 
         
@@ -149,6 +153,15 @@ namespace Timer
             {
                 nmr_Seconds.Value = nmr_Seconds.Minimum;
                 nmr_Minutes.Value++;
+            }
+        }
+
+        private void frm_AddAlarm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Return  || 
+                e.KeyData == (Keys.Control | Keys.S))
+            {
+                SaveForm();
             }
         }
     }

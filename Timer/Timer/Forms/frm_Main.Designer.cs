@@ -64,12 +64,19 @@
             this.cntxMnu_Intreval = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuInt_Minimize = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Seconds = new System.Windows.Forms.Label();
             this.notifyIcon_Main = new System.Windows.Forms.NotifyIcon(this.components);
+            this.pnl_AnalogClock = new System.Windows.Forms.Panel();
+            this.cntxAC = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cntxAC_md1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntxAC_md2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntxAC_md3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntxAC_md4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntxAC_md5 = new System.Windows.Forms.ToolStripMenuItem();
             mnu_Mode1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.ntfMnu_Menu.SuspendLayout();
             this.cntxMnu_Intreval.SuspendLayout();
+            this.cntxAC.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnu_Mode1
@@ -85,15 +92,15 @@
             this.lstb_CurrentAlarms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstb_CurrentAlarms.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lstb_CurrentAlarms.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lstb_CurrentAlarms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstb_CurrentAlarms.FormattingEnabled = true;
             this.lstb_CurrentAlarms.HorizontalScrollbar = true;
             this.lstb_CurrentAlarms.ItemHeight = 18;
-            this.lstb_CurrentAlarms.Location = new System.Drawing.Point(10, 193);
+            this.lstb_CurrentAlarms.Location = new System.Drawing.Point(10, 283);
             this.lstb_CurrentAlarms.Name = "lstb_CurrentAlarms";
             this.lstb_CurrentAlarms.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lstb_CurrentAlarms.Size = new System.Drawing.Size(553, 184);
+            this.lstb_CurrentAlarms.Size = new System.Drawing.Size(605, 148);
             this.lstb_CurrentAlarms.TabIndex = 5;
             this.lstb_CurrentAlarms.SelectedIndexChanged += new System.EventHandler(this.lstb_CurrentAlarms_SelectedIndexChanged);
             // 
@@ -102,16 +109,17 @@
             this.lbl_CurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_CurrentTime.AutoSize = true;
             this.lbl_CurrentTime.BackColor = System.Drawing.SystemColors.MenuText;
-            this.lbl_CurrentTime.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.lbl_CurrentTime.Font = new System.Drawing.Font("Chaparral Pro", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentTime.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbl_CurrentTime.Location = new System.Drawing.Point(149, 24);
+            this.lbl_CurrentTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_CurrentTime.Font = new System.Drawing.Font("Chaparral Pro", 54.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentTime.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lbl_CurrentTime.Location = new System.Drawing.Point(116, 50);
             this.lbl_CurrentTime.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_CurrentTime.Name = "lbl_CurrentTime";
-            this.lbl_CurrentTime.Size = new System.Drawing.Size(320, 150);
+            this.lbl_CurrentTime.Size = new System.Drawing.Size(388, 182);
             this.lbl_CurrentTime.TabIndex = 3;
             this.lbl_CurrentTime.Text = "3/12/2016\r\n5:36:50 μμ";
             this.lbl_CurrentTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_CurrentTime.Click += new System.EventHandler(this.btn_AnalogClock_Click);
             // 
             // tmr_Clock
             // 
@@ -120,7 +128,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 177);
+            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label6.Location = new System.Drawing.Point(10, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 6;
@@ -130,7 +139,7 @@
             // 
             this.chkb_AddAlarm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkb_AddAlarm.AutoSize = true;
-            this.chkb_AddAlarm.Location = new System.Drawing.Point(467, 24);
+            this.chkb_AddAlarm.Location = new System.Drawing.Point(527, 260);
             this.chkb_AddAlarm.Name = "chkb_AddAlarm";
             this.chkb_AddAlarm.Size = new System.Drawing.Size(99, 17);
             this.chkb_AddAlarm.TabIndex = 8;
@@ -143,7 +152,7 @@
             // 
             this.btn_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Remove.Enabled = false;
-            this.btn_Remove.Location = new System.Drawing.Point(11, 397);
+            this.btn_Remove.Location = new System.Drawing.Point(11, 441);
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(57, 23);
             this.btn_Remove.TabIndex = 10;
@@ -153,13 +162,14 @@
             // 
             // menuMain
             // 
-            this.menuMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuMain.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.menuMain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
-            this.menuMain.Size = new System.Drawing.Size(577, 24);
+            this.menuMain.Size = new System.Drawing.Size(626, 24);
             this.menuMain.TabIndex = 11;
             this.menuMain.Text = "Menu";
             // 
@@ -210,6 +220,8 @@
             // 
             // mnu_AnalogClock
             // 
+            this.mnu_AnalogClock.Checked = true;
+            this.mnu_AnalogClock.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnu_AnalogClock.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             mnu_Mode1,
             this.mnu_Mode2,
@@ -337,7 +349,7 @@
             // 
             this.btn_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Edit.Enabled = false;
-            this.btn_Edit.Location = new System.Drawing.Point(74, 397);
+            this.btn_Edit.Location = new System.Drawing.Point(74, 441);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(57, 23);
             this.btn_Edit.TabIndex = 12;
@@ -348,7 +360,7 @@
             // btn_Add
             // 
             this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Add.Location = new System.Drawing.Point(524, 397);
+            this.btn_Add.Location = new System.Drawing.Point(573, 441);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(42, 23);
             this.btn_Add.TabIndex = 13;
@@ -380,22 +392,6 @@
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.mnu_About_Click);
             // 
-            // lbl_Seconds
-            // 
-            this.lbl_Seconds.AutoSize = true;
-            this.lbl_Seconds.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_Seconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Seconds.ForeColor = System.Drawing.SystemColors.Window;
-            this.lbl_Seconds.Location = new System.Drawing.Point(97, 141);
-            this.lbl_Seconds.MaximumSize = new System.Drawing.Size(49, 33);
-            this.lbl_Seconds.MinimumSize = new System.Drawing.Size(49, 33);
-            this.lbl_Seconds.Name = "lbl_Seconds";
-            this.lbl_Seconds.Size = new System.Drawing.Size(49, 33);
-            this.lbl_Seconds.TabIndex = 14;
-            this.lbl_Seconds.Text = "60";
-            this.lbl_Seconds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_Seconds.Visible = false;
-            // 
             // notifyIcon_Main
             // 
             this.notifyIcon_Main.ContextMenuStrip = this.ntfMnu_Menu;
@@ -405,14 +401,72 @@
             this.notifyIcon_Main.Click += new System.EventHandler(this.notifyIcon_Main_Click);
             this.notifyIcon_Main.DoubleClick += new System.EventHandler(this.notifyIcon_Main_DoubleClick);
             // 
+            // pnl_AnalogClock
+            // 
+            this.pnl_AnalogClock.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pnl_AnalogClock.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnl_AnalogClock.ContextMenuStrip = this.cntxAC;
+            this.pnl_AnalogClock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_AnalogClock.Location = new System.Drawing.Point(183, 12);
+            this.pnl_AnalogClock.Name = "pnl_AnalogClock";
+            this.pnl_AnalogClock.Size = new System.Drawing.Size(250, 250);
+            this.pnl_AnalogClock.TabIndex = 15;
+            this.pnl_AnalogClock.Click += new System.EventHandler(this.btn_AnalogClock_Click);
+            // 
+            // cntxAC
+            // 
+            this.cntxAC.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cntxAC_md1,
+            this.cntxAC_md2,
+            this.cntxAC_md3,
+            this.cntxAC_md4,
+            this.cntxAC_md5});
+            this.cntxAC.Name = "cntxAC";
+            this.cntxAC.Size = new System.Drawing.Size(115, 114);
+            // 
+            // cntxAC_md1
+            // 
+            this.cntxAC_md1.Name = "cntxAC_md1";
+            this.cntxAC_md1.Size = new System.Drawing.Size(114, 22);
+            this.cntxAC_md1.Text = "Mode 1";
+            this.cntxAC_md1.Click += new System.EventHandler(this.cntxAC_md1_Click);
+            // 
+            // cntxAC_md2
+            // 
+            this.cntxAC_md2.Name = "cntxAC_md2";
+            this.cntxAC_md2.Size = new System.Drawing.Size(114, 22);
+            this.cntxAC_md2.Text = "Mode 2";
+            this.cntxAC_md2.Click += new System.EventHandler(this.cntxAC_md2_Click);
+            // 
+            // cntxAC_md3
+            // 
+            this.cntxAC_md3.Name = "cntxAC_md3";
+            this.cntxAC_md3.Size = new System.Drawing.Size(114, 22);
+            this.cntxAC_md3.Text = "Mode 3";
+            this.cntxAC_md3.Click += new System.EventHandler(this.cntxAC_md3_Click);
+            // 
+            // cntxAC_md4
+            // 
+            this.cntxAC_md4.Name = "cntxAC_md4";
+            this.cntxAC_md4.Size = new System.Drawing.Size(114, 22);
+            this.cntxAC_md4.Text = "Mode 4";
+            this.cntxAC_md4.Click += new System.EventHandler(this.cntxAC_md4_Click);
+            // 
+            // cntxAC_md5
+            // 
+            this.cntxAC_md5.Name = "cntxAC_md5";
+            this.cntxAC_md5.Size = new System.Drawing.Size(114, 22);
+            this.cntxAC_md5.Text = "Mode 5";
+            this.cntxAC_md5.Click += new System.EventHandler(this.cntxAC_md5_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(577, 432);
+            this.ClientSize = new System.Drawing.Size(626, 476);
             this.ContextMenuStrip = this.cntxMnu_Intreval;
-            this.Controls.Add(this.lbl_Seconds);
+            this.Controls.Add(this.pnl_AnalogClock);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Remove);
@@ -424,7 +478,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuMain;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(500, 400);
+            this.MinimumSize = new System.Drawing.Size(600, 515);
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alarms";
@@ -437,6 +491,7 @@
             this.menuMain.PerformLayout();
             this.ntfMnu_Menu.ResumeLayout(false);
             this.cntxMnu_Intreval.ResumeLayout(false);
+            this.cntxAC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,11 +529,17 @@
         private System.Windows.Forms.ContextMenuStrip cntxMnu_Intreval;
         private System.Windows.Forms.ToolStripMenuItem mnuInt_Minimize;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
-        private System.Windows.Forms.Label lbl_Seconds;
         private System.Windows.Forms.ToolStripMenuItem mnu_AnalogClock;
         private System.Windows.Forms.ToolStripMenuItem mnu_Mode2;
         private System.Windows.Forms.ToolStripMenuItem mnu_Mode3;
         private System.Windows.Forms.ToolStripMenuItem mnu_Mode4;
+        private System.Windows.Forms.Panel pnl_AnalogClock;
+        private System.Windows.Forms.ContextMenuStrip cntxAC;
+        private System.Windows.Forms.ToolStripMenuItem cntxAC_md1;
+        private System.Windows.Forms.ToolStripMenuItem cntxAC_md2;
+        private System.Windows.Forms.ToolStripMenuItem cntxAC_md3;
+        private System.Windows.Forms.ToolStripMenuItem cntxAC_md4;
+        private System.Windows.Forms.ToolStripMenuItem cntxAC_md5;
     }
 }
 
