@@ -152,7 +152,7 @@
             // 
             this.btn_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Remove.Enabled = false;
-            this.btn_Remove.Location = new System.Drawing.Point(11, 441);
+            this.btn_Remove.Location = new System.Drawing.Point(121, 441);
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(57, 23);
             this.btn_Remove.TabIndex = 10;
@@ -349,7 +349,7 @@
             // 
             this.btn_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Edit.Enabled = false;
-            this.btn_Edit.Location = new System.Drawing.Point(74, 441);
+            this.btn_Edit.Location = new System.Drawing.Point(58, 441);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(57, 23);
             this.btn_Edit.TabIndex = 12;
@@ -360,7 +360,7 @@
             // btn_Add
             // 
             this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Add.Location = new System.Drawing.Point(573, 441);
+            this.btn_Add.Location = new System.Drawing.Point(10, 441);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(42, 23);
             this.btn_Add.TabIndex = 13;

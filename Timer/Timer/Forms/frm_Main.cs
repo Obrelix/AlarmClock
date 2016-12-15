@@ -117,9 +117,7 @@ namespace Timer
 
                         Alarms.AddExtraTime(AlarmObj[x]);
                         ListBoxRefresh();
-                        // ανοιξε μια καινούρια φορμα Video Player
-                        frm_AlarmVideoPlayer form = new frm_AlarmVideoPlayer();
-                        form.Show();
+                        videoStart();
                     }
 
                 }
@@ -143,6 +141,18 @@ namespace Timer
             }
         }
       
+        private void videoStart()
+        {
+            // ανοιξε μια καινούρια φορμα Video Player
+            frm_AlarmVideoPlayer form = new frm_AlarmVideoPlayer();
+
+            form.StartPosition = FormStartPosition.Manual;
+            form.Width = 450;
+            form.Height = this.Height- addform.Height+ 8;
+            form.Location = new Point(this.Location.X - form.ClientRectangle.Width  , this.Location.Y);
+           
+            form.Show();
+        }
 
         private void CheckForNewAlarm()
         {
@@ -248,6 +258,8 @@ namespace Timer
             if (chkb_AddAlarm.Checked)
             {
                 //Εμφάνισε την φόρμα Add Form και πέρασε στην static μεταβλητη την τιμή false
+                addform.StartPosition = FormStartPosition.Manual;
+                addform.Location = new Point(this.Location.X - addform.ClientRectangle.Width ,this.Location.Y + this.Height - addform.Height);
                 addform.Show();
                 AddformClose_G = false;
             }
@@ -456,10 +468,7 @@ namespace Timer
         private void frmEvents_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyData == (Keys.F11 | Keys.Control | Keys.Alt) ||
-                e.KeyData == (Keys.Alt | Keys.Escape) ||
-                e.KeyData == (Keys.Control | Keys.Pause) ||
-                e.KeyData == (Keys.Shift | Keys.Scroll)) //Ψυφιακό OR ( | ) 
+            if (e.KeyData == (Keys.Control | Keys.N) ) //Ψυφιακό OR ( | ) 
             {
                 mnu_EnableAlarms.Checked = !mnu_EnableAlarms.Checked;
             }
@@ -476,6 +485,12 @@ namespace Timer
                 {
                     chkb_AddAlarm.Checked = true;
                 }
+            }
+            if(e.KeyData == (Keys.F11 | Keys.Control | Keys.Alt) ||
+                e.KeyData == (Keys.Alt | Keys.Escape) || 
+                e.KeyData == (Keys.Shift | Keys.Scroll))
+            {
+                videoStart();
             }
         }
 
