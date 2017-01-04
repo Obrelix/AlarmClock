@@ -1,5 +1,5 @@
 # AlarmClock
-![alt tag](https://raw.githubusercontent.com/Obrelix/AlarmClock/master/Images/Main3.PNG)
+![alt tag](https://raw.githubusercontent.com/Obrelix/AlarmClock/master/Images/Main2.PNG)
 
 This is an Alarm Clock with analog clock and custom ringtones
 
