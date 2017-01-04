@@ -1,5 +1,6 @@
 # AlarmClock
-![alt tag](https://raw.githubusercontent.com/Obrelix/Windows-Advanced-Keylogger/master/Images/Flags.PNG)
+![alt tag](https://raw.githubusercontent.com/Obrelix/AlarmClock/master/Images/Main3.PNG)
+
 This is an Alarm Clock with analog clock and custom ringtones
 
 This project is written in Visual Studio 2015 IDE.
@@ -23,3 +24,4 @@ Adding more than 1 video player
 It is necessary VLC player in order to play music and Videos
 
 
+![alt tag](https://raw.githubusercontent.com/Obrelix/AlarmClock/master/Images/Main4.PNG)
