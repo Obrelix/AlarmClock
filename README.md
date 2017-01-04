@@ -21,7 +21,7 @@ Saving/Loading automatically the allarm schedule
 Adding more than 1 video player
 
 #Notes
-It is necessary VLC player in order to play music and Videos
+It is needed VLC player in order to play music and Videos
 
 
 ![alt tag](https://raw.githubusercontent.com/Obrelix/AlarmClock/master/Images/Main4.PNG)
