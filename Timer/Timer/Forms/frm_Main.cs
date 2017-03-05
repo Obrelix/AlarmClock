@@ -26,8 +26,11 @@ namespace Timer
 
         
         frm_AddAlarm addform = new frm_AddAlarm();
-        string jsonPath = Application.StartupPath + "\\Alarms.json";
-        
+       // string jsonPath = Application.StartupPath + "\\Alarms.json";
+
+        static string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AlarmClock";
+        static string jsonPath = savePath + "\\Alarms.json";
+
         //Μετρητης για την παρακολούθηση του πλήθους των ξυπνητηριών
         int alarmsCount;
 
@@ -87,6 +90,7 @@ namespace Timer
         //Event Που ενεργοποιείται κατα το άνοιγμα της φόρμας
         private void frmMain_Load(object sender, EventArgs e)
         {
+            
             this.KeyPreview = true;
             this.TransparencyKey = Color.LimeGreen;
             //Αρχικοποίηση του Timer
@@ -95,7 +99,7 @@ namespace Timer
             tmr_Clock.Start();
             lbl_CurrentTime.BackColor = Color.FromArgb(0, 0, 0);
             //Φόρτωσε τα ξυπνητήρια που έχουν σωθεί στο Json στην λίστα ξυπνητηριών του προγράμματος
-            LoadAlarm(jsonPath);
+            LoadAlarm(savePath, jsonPath);
 
         }
 
@@ -323,20 +327,42 @@ namespace Timer
 
         }
         //Μέθοδος για το φόρτωμα των ξυπνητηριων στην λίστα απο το αρχείο Json
-        private void LoadAlarm(string path)
+        private void LoadAlarm(string path, string saveFile)
         {
             
             try
             {
-                AlarmObj.Clear();
-                AlarmObj = JsonConvert.DeserializeObject<List<Alarms>>(System.IO.File.ReadAllText(path));
+                
+                if (File.Exists(saveFile))
+                {
+                    AlarmObj.Clear();
+                    AlarmObj = JsonConvert.DeserializeObject<List<Alarms>>(System.IO.File.ReadAllText(saveFile));
+                }
+                else
+                {
+                    Directory.CreateDirectory(path);
+                    using (System.IO.FileStream fs = System.IO.File.Create(saveFile))
+                    {
+                        for (byte i = 0; i < 100; i++)
+                        {
+                            fs.WriteByte(i);
+                        }
+                    }
+
+                    File.WriteAllText(saveFile, "[ ]");
+                    LoadAlarm(savePath, saveFile);
+                }
+                ListBoxRefresh();
+
+
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            ListBoxRefresh();
+            
         }
         private void ListBoxRefresh()
         {
@@ -456,7 +482,7 @@ namespace Timer
             AmediaPath.ShowDialog();
             if (AmediaPath.FileName != string.Empty)
             {
-                LoadAlarm(AmediaPath.FileName);
+                LoadAlarm(AmediaPath.InitialDirectory, AmediaPath.FileName);
                 notifyIcon_Main.BalloonTipTitle = "Load";
                 notifyIcon_Main.BalloonTipText = "Load succesfully from file : " + AmediaPath.FileName;
                 notifyIcon_Main.ShowBalloonTip(500);
