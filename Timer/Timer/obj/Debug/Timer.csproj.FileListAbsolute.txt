@@ -36,3 +36,4 @@ C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.frm_AlarmVi
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.frm_Main.resources
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.Properties.Resources.resources
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Resources\Alarm.wav

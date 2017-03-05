@@ -84,7 +84,7 @@ namespace Timer
         //Event που ενεργοποιείται κατα το πάτημα του κουμπιού Select Video
         private void btn_SelectVideo_Click(object sender, EventArgs e)
         {
-            AmediaPath.InitialDirectory = Application.StartupPath;
+            //AmediaPath.InitialDirectory = Application.StartupPath;
             //Πέρνα στο πρακάτω αντικείμενο που είναι του τύπου OpenFileDialog να φιλτράρει τα αρχεία και να εμφανίζει μόνο τα Mp4 kai mp3
             AmediaPath.Filter = "Media Files|*.mp3;*.mp4;*.wav;*.avi;*.wma;*.mkv;*.flv;*.wmv;*.flac|All files (*.*)|*.*";
             //Εμφάνισε το OpenFileDialog

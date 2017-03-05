@@ -12,7 +12,7 @@ namespace Timer
     {
         //Ιδιότητα που κρατάει το μήνυμα του ξυπνητηριού
         public string Info { get; set; }
-
+        
         //Ιδιότητα που κρατάει την ημερομηνία του ξυπνητηριού
         public DateTime Date { get; set; }
 
@@ -21,7 +21,7 @@ namespace Timer
         public string VideoPath
         {
             get { return _videoPath; }
-            set { _videoPath = (value == string.Empty) ? (Application.StartupPath + "\\Alarm.wav") : value; }
+            set { _videoPath = (value == string.Empty) ? ("Resources\\Alarm.wav") : value; }
         }
 
         //Ιδιότητα που κρατάει το Mode του ξυπνητηριού Σε μορφή ακεραίου
