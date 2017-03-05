@@ -235,13 +235,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Alarm.wav" />
+    <None Include="Resources\Alarm.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Annoying_Alien_Buzzer.wav" />
+    <None Include="Resources\Annoying_Alien_Buzzer.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Loud-alarm-clock-sound.wav" />
+    <None Include="Resources\Loud-alarm-clock-sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
