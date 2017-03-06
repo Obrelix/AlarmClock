@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Alarm Timer")]
-[assembly: AssemblyDescription("This is an application for multiple allarm clocks with custom video allarm or music allarm")]
+[assembly: AssemblyTitle("Alarm Clock")]
+[assembly: AssemblyDescription("Customable Allarm Clocks")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Obrelix")]
 [assembly: AssemblyProduct("Allarm Clock")]

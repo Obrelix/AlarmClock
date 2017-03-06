@@ -17,14 +17,9 @@ C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer
 C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
 C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.exe
 C:\Users\Obrelix\Source\Repos\Alarm Clock\AlarmClock\Timer\Timer\obj\Debug\Timer.pdb
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Timer.exe.config
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Interop.AXVLC.dll
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AxInterop.AXVLC.dll
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.csproj.ResolveComReference.cache
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.exe
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.pdb
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Timer.exe
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Timer.pdb
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Interop.AXVLC.dll
@@ -34,11 +29,16 @@ C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.frm_About.r
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.frm_AddAlarm.resources
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.frm_AlarmVideoPlayer.resources
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.frm_Main.resources
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.Properties.Resources.resources
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
 C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Resources\Alarm.wav
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Timer.exe.manifest
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\Timer.application
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.TrustInfo.xml
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.exe.manifest
-C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\Timer.application
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\AlarmClock.exe.config
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\AlarmClock.exe.manifest
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\AlarmClock.application
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\AlarmClock.exe
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\bin\Debug\AlarmClock.pdb
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AlarmClock.Properties.Resources.resources
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AlarmClock.TrustInfo.xml
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AlarmClock.exe.manifest
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AlarmClock.application
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AlarmClock.exe
+C:\Users\Obrelix\Source\Repos\AlarmClock\Timer\Timer\obj\Debug\AlarmClock.pdb
